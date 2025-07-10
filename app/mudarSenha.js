@@ -30,7 +30,7 @@ source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/223
         <View style={styles.button}>
 
                 <TouchableOpacity>
-                     <Text style={styles.buttonText} onPress={() => router.push("/index")}>Voltar</Text>
+                     <Text style={styles.buttonText} onPress={() => router.push("/")}>Voltar</Text>
                 </TouchableOpacity>
           </View>
 
