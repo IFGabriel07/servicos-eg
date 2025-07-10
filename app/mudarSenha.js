@@ -3,42 +3,31 @@ import { useRouter } from 'expo-router';
 import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity } from 'react-native';
 
 export default function mudarSenha() {
-       const router = useRouter();
+  const router = useRouter();
   return (
     <SafeAreaView style={styles.container}>
-          <View style={styles.content}>
+      <View style={styles.content}>
 
         <Image
-source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
-          style={styles.logo}
-        />
+          source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
+          style={styles.logo} />
+
         <TextInput
           placeholder="Nova Senha"
-          style={styles.input}
-        />
-
+          style={styles.input} />
         <TextInput
           placeholder="Confirmar Senha"
           secureTextEntry
-          style={styles.input}
-        />
+          style={styles.input} />
 
-        
-   <Text style={styles.titulo}>Senha Mudada</Text>
-          <View/>
-
-
+        <Text style={styles.titulo}>Senha Mudada</Text>
+        <View />
         <View style={styles.button}>
 
-                <TouchableOpacity>
-                     <Text style={styles.buttonText} onPress={() => router.push("/")}>Voltar</Text>
-                </TouchableOpacity>
-          </View>
-
-
-
-
-
+          <TouchableOpacity>
+            <Text style={styles.buttonText} onPress={() => router.push("/")}>Voltar</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -54,16 +43,15 @@ const styles = StyleSheet.create({
 
   content: {
     alignItems: 'center',
-    gap: 20, 
+    gap: 20,
   },
 
-titulo:{
-    color:'#C5DBD6',
-      fontFamily: 'sans-serif',
-      fontWeight:'bold',
-      fontSize: 21,
+  titulo: {
+    color: '#C5DBD6',
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold',
+    fontSize: 21,
   },
-
 
   buttonText: {
     fontSize: 18,
@@ -74,16 +62,19 @@ titulo:{
   logo: {
     width: 150,
     height: 150,
+    position: "absolute",
+    bottom: 270,
   },
   input: {
+    flexDirection: "column",
     backgroundColor: '#20C997',
     width: 280,
     padding: 12,
     fontSize: 18,
+    gap: 32,
     borderRadius: 8,
-   
-  },
 
+  },
 
   button: {
     backgroundColor: '#FFD700',

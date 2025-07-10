@@ -30,11 +30,8 @@ export default function index() {
           </TouchableOpacity>
         </View>
       </View>
-
-
-      <TouchableOpacity style={styles.voltar} onPress={() => router.back()}>
-        <Text style={styles.linkcor}>Voltar</Text>
-      </TouchableOpacity>
+      
+      
     </SafeAreaView>
   );
 }
@@ -73,7 +70,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontSize: 18,
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#000',
   },
@@ -87,7 +84,7 @@ const styles = StyleSheet.create({
   voltar: {
     position: 'absolute',
     bottom: 40,
-    left: 30,
+    left: 0,
   },
 
   linkcor: {

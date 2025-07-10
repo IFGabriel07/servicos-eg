@@ -30,7 +30,7 @@ source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/223
 
       </View>
 </View>
-           <TouchableOpacity  style={styles.voltar}>
+           <TouchableOpacity style={styles.voltar}>
               <Text style={styles.linkcor} onPress={() => router.back()}>Voltar</Text>
           </TouchableOpacity>
     </SafeAreaView>
@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
   logo: {
     width: 150,
     height: 150,
+    position:"absolute",
+    bottom:270,
+    
   },
   input: {
     backgroundColor: '#20C997',
@@ -82,14 +85,14 @@ const styles = StyleSheet.create({
 textBox:{
 alignItems:"center",
 justifyContent:"column",
-gap:50,
+gap:30,
 
 
 },
 
 
   voltar:{
-position: 'absolute',
+  position: 'absolute',
   bottom: 40,
   left: 0,
   },

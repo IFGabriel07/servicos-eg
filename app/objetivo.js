@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
 
   voltar: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 40,
     left: 30,
   },
 

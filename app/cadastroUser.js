@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   voltar: {
     position: 'absolute',
     bottom: 40,
-    left: 10,
+    left: 30,
   },
 
   linkcor: {
