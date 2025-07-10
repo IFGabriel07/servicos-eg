@@ -1,45 +1,32 @@
 import { useRouter } from 'expo-router';
-import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 
 export default function objetivo() {
-    const router = useRouter();
+  const router = useRouter();
   return (
     <SafeAreaView style={styles.container}>
-          <View style={styles.content}>
+      <View style={styles.content}>
 
-       <Image
-source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
+        <Image
+          source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
           style={styles.logo}
         />
 
-   
-   <Text style={styles.titulo}>Qual é o seu Objetivo?</Text>
-          <View/>
+        <Text style={styles.titulo}>Qual é o seu objetivo?</Text>
 
-        <View style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push("/cadastroUser")}>
+          <Text style={styles.buttonText}>Buscar Serviço</Text>
+        </TouchableOpacity>
 
-                <TouchableOpacity>
-                     <Text style={styles.buttonText} onPress={() => router.push("/cadastroUser")}>Buscar Serviço</Text>
-                </TouchableOpacity>
-          </View>
+        <TouchableOpacity style={styles.button} onPress={() => router.push("/cadastroServ")}>
+          <Text style={styles.buttonText}>Prestar Serviço</Text>
+        </TouchableOpacity>
 
-  
-        <View style={styles.button}>
-
-                <TouchableOpacity>
-                     <Text style={styles.buttonText} onPress={() => router.push("/cadastroServ")}>Prestar Serviço</Text>
-                </TouchableOpacity>
-
-          </View>
-
-        <View style={styles.Linksdebaixo} >
-
-            <TouchableOpacity>
-                    <Text style={styles.linkcor} onPress={() => router.back()}>Voltar</Text>
-            </TouchableOpacity>
-
-</View>
       </View>
+
+      <TouchableOpacity style={styles.voltar} onPress={() => router.back()}>
+        <Text style={styles.linkcor}>Voltar</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -49,31 +36,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#00291c',
     justifyContent: 'center',
-
   },
 
   content: {
     alignItems: 'center',
-    gap: 20, 
+    gap: 30,
   },
 
-  titulo:{
-    color:'#C5DBD6',
-      fontFamily: 'sans-serif',
-      fontWeight:'bold',
-      fontSize: 24,
+  logo: {
+    width: 150,
+    height: 150,
   },
 
-  buttonText: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection:"column",
-    padding:1,
-    fontSize: 22,
-    fontFamily: 'sans-serif',
-    color: '#000',
+  titulo: {
+    color: '#C5DBD6',
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'center',
   },
-
 
   button: {
     backgroundColor: '#FFD700',
@@ -83,36 +63,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-    logo: {
-    width: 150,
-    height: 150,
-    },
+  buttonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#000',
+  },
 
-  Linksdebaixo: {
-    flexDirection: 'row',
-
-    width: 300,
+  voltar: {
+    position: 'absolute',
+    bottom: 0,
+    left: 30,
   },
 
   linkcor: {
     color: '#FFD700',
-    textAlign: 'center',
-    width: 100,
-
-    position: 'absolute',
-    left: 0,
-
+    fontWeight: 'bold',
   },
 });
-
-
-
-
-
-
-
-
-
-
-
-

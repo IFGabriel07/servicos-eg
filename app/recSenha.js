@@ -1,3 +1,4 @@
+
 import { useRouter } from 'expo-router';
 import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity } from 'react-native';
 
@@ -12,6 +13,9 @@ export default function recSenha() {
 source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
           style={styles.logo}
         />
+
+
+
         <TextInput
           placeholder="Email"
           style={styles.input}
@@ -23,26 +27,16 @@ source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/223
           style={styles.input}
         />
 
-       
-
-
         <View style={styles.button}>
-
                 <TouchableOpacity>
                      <Text style={styles.buttonText} onPress={() => router.push("/recConfirmarSenha")}>Prosseguir</Text>
                 </TouchableOpacity>
           </View>
 
-        <View style={styles.Linksdebaixo}>
-
-
-        </View>
-
-                  <TouchableOpacity>
+      </View>
+                  <TouchableOpacity  style={styles.voltar}>
                           <Text style={styles.linkcor} onPress={() => router.back()}>Voltar</Text>
                   </TouchableOpacity>
-
-      </View>
     </SafeAreaView>
   );
 }
@@ -92,6 +86,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: 300,
+  },
+  voltar:{
+
+position: 'absolute',
+  bottom: 40,
+    left: 30,
   },
 
   linkcor: {
