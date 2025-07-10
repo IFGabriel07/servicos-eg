@@ -11,36 +11,31 @@ export default function recSenha() {
 
         <Image
 source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
-          style={styles.logo}
-        />
-
-
-
+ style={styles.logo}/>
+    <View style={styles.textBox}>  
         <TextInput
           placeholder="Email"
           style={styles.input}
         />
-
         <TextInput
           placeholder="Confirmar Email"
           secureTextEntry
           style={styles.input}
         />
-
         <View style={styles.button}>
                 <TouchableOpacity>
-                     <Text style={styles.buttonText} onPress={() => router.push("/recConfirmarSenha")}>Prosseguir</Text>
+  <Text style={styles.buttonText} onPress={() => router.push("/recConfirmarSenha")}>Prosseguir</Text>
                 </TouchableOpacity>
-          </View>
+        </View>
 
       </View>
-                  <TouchableOpacity  style={styles.voltar}>
-                          <Text style={styles.linkcor} onPress={() => router.back()}>Voltar</Text>
-                  </TouchableOpacity>
+</View>
+           <TouchableOpacity  style={styles.voltar}>
+              <Text style={styles.linkcor} onPress={() => router.back()}>Voltar</Text>
+          </TouchableOpacity>
     </SafeAreaView>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -55,6 +50,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
+    
     fontSize: 18,
     fontWeight: 'bold',
     color: '#000',
@@ -75,6 +71,7 @@ const styles = StyleSheet.create({
 
 
   button: {
+    
     backgroundColor: '#FFD700',
     width: 280,
     padding: 15,
@@ -82,16 +79,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  Linksdebaixo: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 300,
-  },
-  voltar:{
+textBox:{
+alignItems:"center",
+justifyContent:"column",
+gap:50,
 
+
+},
+
+
+  voltar:{
 position: 'absolute',
   bottom: 40,
-    left: 30,
+  left: 0,
   },
 
   linkcor: {

@@ -15,7 +15,8 @@ source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/223
           style={styles.logo}
         />
 
-<Text style={styles.titulo}>Enviamos um código  no email Designado</Text>   
+<Text style={styles.titulo}>Enviamos um código  no email 
+  Designado</Text>   
 <View/>
 
         <TextInput

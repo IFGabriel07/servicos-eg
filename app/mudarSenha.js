@@ -37,10 +37,6 @@ source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/223
 
 
 
-        <View style={styles.Linksdebaixo}>
-
-
-        </View>
 
 
       </View>
