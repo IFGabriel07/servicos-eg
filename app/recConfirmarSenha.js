@@ -44,11 +44,8 @@ const styles = StyleSheet.create({
     gap: 20,
     paddingHorizontal: 20,
   },
-  title: {
-    fontSize: 24,
-    color: '#FFF',
-    fontWeight: 'bold',
-  },
+
+
   subTitulo: {
     color: '#C5DBD6',
     fontSize: 16,

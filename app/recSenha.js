@@ -50,11 +50,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 20,
   },
-  title: {
-    fontSize: 24,
-    color: '#FFF',
-    fontWeight: 'bold',
-  },
+
+  
   logo: {
     width: 150,
     height: 150,
