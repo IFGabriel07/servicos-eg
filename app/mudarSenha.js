@@ -1,34 +1,35 @@
-
 import { useRouter } from 'expo-router';
 import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity } from 'react-native';
 
 export default function mudarSenha() {
   const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-
         <Image
           source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
-          style={styles.logo} />
+          style={styles.logo}
+        />
 
         <TextInput
-          placeholder="Nova Senha"
-          style={styles.input} />
-        <TextInput
-          placeholder="Confirmar Senha"
+          placeholder="Crie uma Nova Senha"
           secureTextEntry
-          style={styles.input} />
+          style={styles.input}
+        />
 
-        <Text style={styles.titulo}>Senha Mudada</Text>
-        <View />
-        <View style={styles.button}>
+        <TextInput
+          placeholder="Confirme a Nova Senha"
+          secureTextEntry
+          style={styles.input}
+        />
 
-          <TouchableOpacity>
-            <Text style={styles.buttonText} onPress={() => router.push("/")}>Voltar</Text>
-          </TouchableOpacity>
-        </View>
+        <Text style={styles.sucesso}>✅ Senha alterada com sucesso!</Text>
+
       </View>
+        <TouchableOpacity style={styles.button} onPress={() => router.push("/")}>
+          <Text style={styles.buttonText}>Ir Para Tela de Login</Text>
+        </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -38,44 +39,32 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#00291c',
     justifyContent: 'center',
-
+    alignItems: 'center',
   },
-
   content: {
     alignItems: 'center',
     gap: 20,
   },
-
-  titulo: {
-    color: '#C5DBD6',
-    fontFamily: 'sans-serif',
-    fontWeight: 'bold',
-    fontSize: 21,
-  },
-
-  buttonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#000',
-  },
-
+  
   logo: {
     width: 150,
     height: 150,
-    position: "absolute",
-    bottom: 270,
+    marginBottom: 20,
   },
   input: {
-    flexDirection: "column",
     backgroundColor: '#20C997',
     width: 280,
     padding: 12,
     fontSize: 18,
-    gap: 32,
     borderRadius: 8,
-
   },
-
+  sucesso: {
+    color: '#00FF7F',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginVertical: 10,
+    textAlign: 'center',
+  },
   button: {
     backgroundColor: '#FFD700',
     width: 280,
@@ -83,16 +72,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
   },
-
-  Linksdebaixo: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 300,
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#000',
   },
-
   linkcor: {
     color: '#FFD700',
-    textAlign: 'center',
-    width: 100,
+    marginTop: 15,
+    fontSize: 16,
   },
 });

@@ -22,9 +22,10 @@ export default function objetivo() {
           <Text style={styles.buttonText}>Prestar Serviço</Text>
         </TouchableOpacity>
 
+
       </View>
 
-      <TouchableOpacity style={styles.voltar} onPress={() => router.back()}>
+      <TouchableOpacity style={styles.voltar} onPress={() => router.back("/index")}>
         <Text style={styles.linkcor}>Voltar</Text>
       </TouchableOpacity>
     </SafeAreaView>
