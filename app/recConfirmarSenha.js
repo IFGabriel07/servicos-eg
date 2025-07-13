@@ -25,7 +25,7 @@ export default function testRecConfi() {
         </TouchableOpacity>
 
       </View>
-        <TouchableOpacity  style={styles.voltar} onPress={() => router.back("recSenha")}>
+        <TouchableOpacity  style={styles.voltar} onPress={() => router.back("/")}>
           <Text style={styles.linkcor}>Voltar</Text>
         </TouchableOpacity>
     </SafeAreaView>

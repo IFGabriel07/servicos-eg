@@ -61,7 +61,7 @@ export default function CadastroServ() {
             <TextInput placeholder="Estado" style={styles.input} />
             <TextInput placeholder="Cidade" style={styles.input} />
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => router.push("/perfilUser1")}>
               <Text style={styles.buttonText}>Prosseguir</Text>
             </TouchableOpacity>
 
