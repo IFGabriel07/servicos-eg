@@ -18,17 +18,12 @@ export default function index() {
     
         <TouchableOpacity style={styles.topo} onPress={() => router.back('/')}>
           <Text style={styles.linkcor}>Sair</Text>
-        <Ionicons name="person" size={32} color="black" />
         
         </TouchableOpacity>
       <View style={styles.content}>
 
-        <Image 
-          source={{
-            uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d',
-          }}
-          style={styles.logo}
-        />
+
+            <Ionicons onPress={() => router.push('/perfilUser1')} name="person" size={32} color="black" />
 
         <View style={styles.descricao}>
 

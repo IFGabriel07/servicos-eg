@@ -29,7 +29,7 @@ export default function CadastroServ() {
   return (
     <SafeAreaView style={styles.container}>
 
-      {/* Tela Cadastro */}
+     
       <View style={styles.content}>
         <Image
           source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
@@ -49,7 +49,7 @@ export default function CadastroServ() {
         <Text style={styles.linkcor}>Voltar</Text>
       </TouchableOpacity>
 
-      {/* Tela Endereço */}
+      
       {showEndereco && (
         <Animated.View style={[styles.overlay, { transform: [{ translateY: slideAnim }] }]}>
           <View style={styles.modalCard}>
@@ -61,8 +61,8 @@ export default function CadastroServ() {
             <TextInput placeholder="Estado" style={styles.input} />
             <TextInput placeholder="Cidade" style={styles.input} />
 
-            <TouchableOpacity style={styles.button} onPress={() => router.push("/perfilUser1")}>
-              <Text style={styles.buttonText}>Prosseguir</Text>
+            <TouchableOpacity style={styles.button} >
+              <Text style={styles.buttonText} onPress={() => router.push("/telaUser1")}>Prosseguir</Text>
             </TouchableOpacity>
 
 

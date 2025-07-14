@@ -29,7 +29,7 @@ export default function CadastroServ() {
   return (
     <SafeAreaView style={styles.container}>
 
-      {/* Tela Cadastro */}
+      
 
       <View style={styles.content}>
         <Image
@@ -50,7 +50,7 @@ export default function CadastroServ() {
         <Text style={styles.linkcor}>Voltar</Text>
       </TouchableOpacity>
 
-      {/* Tela Endereço */}
+      
       {showEndereco && (
         <Animated.View style={[styles.overlay, { transform: [{ translateY: slideAnim }] }]}>
           <View style={styles.modalCard}>
@@ -63,7 +63,7 @@ export default function CadastroServ() {
             <TextInput placeholder="Cidade" style={styles.input} />
 
             <TouchableOpacity style={styles.button} >
-              <Text style={styles.buttonText}>Prosseguir onPress={() => router.puah("/perfilU")}</Text>
+              <Text style={styles.buttonText} onPress={() => router.push("/perfilUser1")}>Prosseguir</Text>
             </TouchableOpacity>
             
           
