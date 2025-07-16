@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity } from 'react-native';
 
-export default function testRecConfi() {
+export default function recConfirmarSenha() {
   const router = useRouter();
 
   return (

@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { useRouter } from 'expo-router';
 import {Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity, Animated} from 'react-native';
 
-export default function CadastroServ() {
+export default function cadastroUser() {
   const router = useRouter();
   const [showEndereco, setShowEndereco] = useState(false);
   const slideAnim = useRef(new Animated.Value(600)).current;

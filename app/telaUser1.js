@@ -4,7 +4,7 @@ import {Text,SafeAreaView,StyleSheet,View,Image,TouchableOpacity, TextInput} fro
 import sloganServiçoEG from '../assets/sloganServiçoEG.png';
 
 
-export default function index() {
+export default function telaUser1() {
   const router = useRouter();
 
   return (

@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function index() {
+export default function perfilUser1() {
   const router = useRouter();
 
   return (
