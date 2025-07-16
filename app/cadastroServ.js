@@ -26,7 +26,7 @@ export default function CadastroServ() {
     });
   };
 
-  return (
+  return (          
     <SafeAreaView style={styles.container}>
 
       

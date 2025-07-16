@@ -1,29 +1,31 @@
 import { useRouter } from 'expo-router';
 import {Ionicons} from '@expo/vector-icons' 
-import {
-  
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {Text,SafeAreaView,StyleSheet,View,Image,TouchableOpacity,} from 'react-native';
+import sloganServiçoEG from '../assets/sloganServiçoEG.png';
+
 
 export default function index() {
   const router = useRouter();
 
   return (
     <SafeAreaView style={styles.container}>
-    
-        <TouchableOpacity style={styles.topo} onPress={() => router.back('/')}>
-          <Text style={styles.linkcor}>Sair</Text>
-        
+    <View style={styles.topo} >
+
+         <TouchableOpacity  onPress={() => router.push('/')}>
+            <Text style={styles.linkcor}>Sair</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity  onPress={() => router.push('/perfilUser1')}>
+            <Ionicons name="person" size={32} color="black" />
+        </TouchableOpacity>
+
+        </View>
       <View style={styles.content}>
 
 
-            <Ionicons onPress={() => router.push('/perfilUser1')} name="person" size={32} color="black" />
+
+
+      <Image source={sloganServiçoEG} style={styles.logo} />  
 
         <View style={styles.descricao}>
 
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 150,
+    width: 250,
     height: 150,
   },
 
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
-    // Android
+    // do Android
     elevation: 5,
     borderRadius: 10,
 },
@@ -93,7 +95,7 @@ Info2:{
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
-    // Android
+    // Do Android
     elevation: 5,
     borderRadius: 10,
 },
@@ -108,21 +110,21 @@ Info2:{
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
-    // Android
+    // Do Android
     elevation: 5,
     borderRadius: 10,
 },
   topo:
   
   {
-      flex:1,
-   bottom:50,
-  alignItems:"center",
-    flexDirection:"row",
-   gap:210,
-   top:20,
-   padding:50,
-    justifyContent: "center"
+    flex:1,
+    bottom:50,
+   alignItems:"center",
+     flexDirection:"row",
+    gap:210,
+    top:20,
+    padding:50,
+     justifyContent: "center"
     
   },
 

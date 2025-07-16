@@ -16,19 +16,16 @@ export default function index() {
   return (
     <SafeAreaView style={styles.container}>
     
-        <TouchableOpacity style={styles.topo} onPress={() => router.back('/')}>
-          <Text style={styles.linkcor}>Sair</Text>
-        <Ionicons name="person" size={32} color="black" />
-        
+        <TouchableOpacity style={styles.topo} >
+          <Text style={styles.linkcor}onPress={() => router.back('/telaUser1')} >Sair</Text>
+        <Ionicons name="person" size={32} color="black" onPress={() => router.push('/')} />
         </TouchableOpacity>
+
       <View style={styles.content}>
 
-        <Image 
-          source={{
-            uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d',
-          }}
-          style={styles.logo}
-        />
+      <View style={styles.iconePerfil}>
+      <Ionicons name="person" size={64} color="black" />
+      </View>
 
         <View style={styles.descricao}>
 
@@ -120,13 +117,13 @@ Info2:{
   topo:
   
   {
-      flex:1,
-   bottom:50,
+    flex:1,
+  bottom:10,
   alignItems:"center",
-    flexDirection:"row",
-   gap:210,
-   top:20,
-   padding:50,
+  flexDirection:"row",
+  gap:210,
+  top:40,
+  padding:30,
     justifyContent: "center"
     
   },
@@ -135,4 +132,18 @@ Info2:{
     color: '#FFD700',
     fontWeight: 'bold',
   },
+
+
+  iconePerfil:{
+
+    iconWrapper: {
+      backgroundColor: '#ccc',
+      borderRadius: 50,
+      padding: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    
+
+  }
 });
