@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import {Ionicons} from '@expo/vector-icons' 
-import {Text,SafeAreaView,StyleSheet,View,Image,TouchableOpacity,} from 'react-native';
+import {Text,SafeAreaView,StyleSheet,View,Image,TouchableOpacity, TextInput} from 'react-native';
 import sloganServiçoEG from '../assets/sloganServiçoEG.png';
 
 
@@ -23,13 +23,13 @@ export default function index() {
       <View style={styles.content}>
 
 
-
-
+      <View >
+        <TextInput placeholder="Pesquisa" style={styles.input} />
+        </View>
       <Image source={sloganServiçoEG} style={styles.logo} />  
 
         <View style={styles.descricao}>
 
-        <Text style={styles.Info}>Adonai Roberto de Oliveira Narciso</Text>
        <Text style={styles.Info2}>CPF:</Text>
       <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
       <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
@@ -117,12 +117,12 @@ Info2:{
   topo:
   
   {
-    flex:1,
-    bottom:50,
+    flex:1, 
+    bottom:10,
    alignItems:"center",
      flexDirection:"row",
     gap:210,
-    top:20,
+    top:10,
     padding:50,
      justifyContent: "center"
     
@@ -132,4 +132,9 @@ Info2:{
     color: '#FFD700',
     fontWeight: 'bold',
   },
+  input:{
+    backgroundColor:"#C5DBD6",
+
+
+  }
 });

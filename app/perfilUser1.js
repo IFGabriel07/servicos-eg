@@ -18,7 +18,7 @@ export default function index() {
     
         <TouchableOpacity style={styles.topo} >
           <Text style={styles.linkcor}onPress={() => router.back('/telaUser1')} >Sair</Text>
-        <Ionicons name="person" size={32} color="black" onPress={() => router.push('/')} />
+
         </TouchableOpacity>
 
       <View style={styles.content}>
@@ -118,13 +118,10 @@ Info2:{
   
   {
     flex:1,
-  bottom:10,
-  alignItems:"center",
   flexDirection:"row",
-  gap:210,
-  top:40,
   padding:30,
-    justifyContent: "center"
+  marginBottom:'20%',
+    justifyContent: "flex-start"
     
   },
 
