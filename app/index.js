@@ -1,12 +1,32 @@
 import { useRouter } from 'expo-router';
 import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity } from 'react-native';
+import { Auth} from "../firebase.config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Button } from 'react-native-paper';
+
 
 export default function index() {
   const router = useRouter();
 
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(Auth, email, senha);
+      // Signed up 
+      const user = userCredential.user;
+      console.log(user);
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error(errorCode);
+      console.error(errorMessage);
+    }    
+  }
+
+  
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
+
 
         <Image
           source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
@@ -17,7 +37,7 @@ export default function index() {
         <TextInput placeholder="Senha" secureTextEntry style={styles.input} />
 
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Entrar</Text>
+        <Button mode='contained' onPress={handleLogin}>Login</Button>
         </TouchableOpacity>
 
         <View style={styles.Linksdebaixo}>
