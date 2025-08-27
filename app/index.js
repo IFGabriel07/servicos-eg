@@ -1,24 +1,28 @@
 import { useRouter } from 'expo-router';
 import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity } from 'react-native';
-import { Auth} from "../firebase.config";
+import { auth } from "../firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Button } from 'react-native-paper';
+import { useState } from 'react';
 
 
 export default function index() {
+  const [email,setEmail] = useState("");
+  const [senha,setSenha] = useState("");
+
   const router = useRouter();
 
   const handleLogin = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(Auth, email, senha);
+      const userCredential = await signInWithEmailAndPassword(auth, email, senha);
       // Signed up 
       const user = userCredential.user;
-      console.log(user);
+      console.log("sucesso negão");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.error(errorCode);
-      console.error(errorMessage);
+      console.log(errorCode);
+      console.log(errorMessage);
     }    
   }
 
@@ -33,12 +37,12 @@ export default function index() {
           style={styles.logo}
         />
 
-        <TextInput placeholder="Email ou CPF" style={styles.input} />
-        <TextInput placeholder="Senha" secureTextEntry style={styles.input} />
+        <TextInput placeholder="Email ou CPF" style={styles.input} onChangeText={a => setEmail(a)} />
+        <TextInput placeholder="Senha"  style={styles.input} onChangeText={a => setSenha(a)}/>
 
         <TouchableOpacity style={styles.button}>
-        <Button mode='contained' onPress={handleLogin}>Login</Button>
-        </TouchableOpacity>
+        <Button mode='contained' onPress={handleLogin}>Entrar</Button>
+        </TouchableOpacity> 
 
         <View style={styles.Linksdebaixo}>
           <TouchableOpacity onPress={() => router.push('/recSenha')}>
