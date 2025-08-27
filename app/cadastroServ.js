@@ -1,9 +1,32 @@
 import { useState, useRef } from 'react';
 import { useRouter } from 'expo-router';
 import {Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity, Animated} from 'react-native';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase.config';
 
+const router = useRouter();
 export default function cadastroServ() {
-  const router = useRouter();
+
+  const [newEmail, setNewEmail] = useState("");
+  const [newSenha, setNewSenha] = useState("");
+
+  async function cadastrarSev(){
+    try{
+      const sev = await createUserWithEmailAndPassword(auth, newEmail, newSenha)
+      const seridor = sev.user 
+      console.log(seridor)
+
+      router.navigate("/")
+    }
+
+    catch(error){
+      const errorCode = error.code
+      const errorMessage = error.errorMessage
+      console.log(errorCode)
+      console.log(errorMessage)
+    }
+  }
+
   const [showEndereco, setShowEndereco] = useState(false);
   const slideAnim = useRef(new Animated.Value(600)).current;
 
@@ -37,9 +60,11 @@ export default function cadastroServ() {
           style={styles.logo}
         />
         <TextInput placeholder="Nome" style={styles.input} />
-        <TextInput placeholder="CPF" style={styles.input} />
+        <TextInput placeholder="Email" style={styles.input} value={newEmail} onChangeText={a => setNewEmail(a)}/>
+
+        <TextInput placeholder="senha" style={styles.input} secureTextEntry = {true} value={newSenha} onChangeText={a => setNewSenha(a)} />
+        
         <TextInput placeholder="Número de telefone" style={styles.input} />
-        <TextInput placeholder="Email" style={styles.input} />
 
         <TouchableOpacity style={styles.button} onPress={abrirEndereco}>
           <Text style={styles.buttonText}>Próxima etapa</Text>
@@ -63,7 +88,7 @@ export default function cadastroServ() {
             <TextInput placeholder="Cidade" style={styles.input} />
 
             <TouchableOpacity style={styles.button} >
-              <Text style={styles.buttonText} onPress={() => router.push("/areaServ")}>Prosseguir</Text>
+              <Text style={styles.buttonText} onPress={cadastrarSev}>Prosseguir</Text>
             </TouchableOpacity>
             
           
