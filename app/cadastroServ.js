@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { useRouter } from 'expo-router';
-import {Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity, Animated} from 'react-native';
+import { Text, SafeAreaView, StyleSheet, TextInput, View, Image, TouchableOpacity, Animated } from 'react-native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase.config';
 
@@ -10,16 +10,15 @@ export default function cadastroServ() {
   const [newEmail, setNewEmail] = useState("");
   const [newSenha, setNewSenha] = useState("");
 
-  async function cadastrarSev(){
-    try{
+  async function cadastrarSev() {
+    try {
       const sev = await createUserWithEmailAndPassword(auth, newEmail, newSenha)
-      const seridor = sev.user 
+      const seridor = sev.user
       console.log(seridor)
-
-      router.navigate("/")
+      router.push("r/index")
     }
 
-    catch(error){
+    catch (error) {
       const errorCode = error.code
       const errorMessage = error.errorMessage
       console.log(errorCode)
@@ -49,10 +48,10 @@ export default function cadastroServ() {
     });
   };
 
-  return (          
+  return (
     <SafeAreaView style={styles.container}>
 
-      
+
 
       <View style={styles.content}>
         <Image
@@ -60,22 +59,23 @@ export default function cadastroServ() {
           style={styles.logo}
         />
         <TextInput placeholder="Nome" style={styles.input} />
-        <TextInput placeholder="Email" style={styles.input} value={newEmail} onChangeText={a => setNewEmail(a)}/>
+        <TextInput placeholder="Email" style={styles.input} value={newEmail} onChangeText={a => setNewEmail(a)} />
 
-        <TextInput placeholder="senha" style={styles.input} secureTextEntry = {true} value={newSenha} onChangeText={a => setNewSenha(a)} />
-        
+        <TextInput placeholder="senha" style={styles.input} secureTextEntry={true} value={newSenha} onChangeText={a => setNewSenha(a)} />
+
         <TextInput placeholder="Número de telefone" style={styles.input} />
 
         <TouchableOpacity style={styles.button} onPress={abrirEndereco}>
-          <Text style={styles.buttonText}>Próxima etapa</Text>
+          <Text style={styles.buttonText}>Prosseguir</Text>
         </TouchableOpacity>
-      </View>
 
-      <TouchableOpacity style={styles.voltar}onPress={() => router.back("/")}>
+      </View>     
+
+      <TouchableOpacity style={styles.voltar} onPress={() => router.back("/")}>
         <Text style={styles.linkcor}>Voltar</Text>
       </TouchableOpacity>
 
-      
+
       {showEndereco && (
         <Animated.View style={[styles.overlay, { transform: [{ translateY: slideAnim }] }]}>
           <View style={styles.modalCard}>
@@ -87,11 +87,12 @@ export default function cadastroServ() {
             <TextInput placeholder="Estado" style={styles.input} />
             <TextInput placeholder="Cidade" style={styles.input} />
 
-            <TouchableOpacity style={styles.button} >
-              <Text style={styles.buttonText} onPress={cadastrarSev}>Prosseguir</Text>
-            </TouchableOpacity>
-            
-          
+           
+        <TouchableOpacity style={styles.button} onPress={cadastrarSev}>
+          <Text style={styles.buttonText}>Prosseguir</Text>
+        </TouchableOpacity>
+
+
             <TouchableOpacity style={styles.voltarModal} onPress={fecharEndereco}>
               <Text style={styles.linkcor}>Voltar</Text>
             </TouchableOpacity>
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
   voltarModal: {
     marginTop: 20,
     bottom: 0,
-    right:115,
+    right: 115,
   },
 
   modalCard: {
