@@ -40,7 +40,7 @@ export default function index() {
         <TextInput placeholder="Email ou CPF" style={styles.input} onChangeText={a => setEmail(a)} />
         <TextInput placeholder="Senha"  style={styles.input} onChangeText={a => setSenha(a)}/>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}onPress={() => router.push('/telaUser1')}>
         <Button mode='contained' onPress={handleLogin}>Entrar</Button>
         </TouchableOpacity> 
 

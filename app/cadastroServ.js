@@ -15,7 +15,8 @@ export default function cadastroServ() {
       const sev = await createUserWithEmailAndPassword(auth, newEmail, newSenha)
       const seridor = sev.user
       console.log(seridor)
-      router.push("r/index")
+      
+      router.navigate("/")
     }
 
     catch (error) {

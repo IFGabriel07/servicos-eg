@@ -4,6 +4,12 @@ import {Text,SafeAreaView,StyleSheet,View,Image,TouchableOpacity, TextInput} fro
 import sloganServiçoEG from '../assets/sloganServiçoEG.png';
 
 
+import { auth } from '../firebase.config'
+
+export default function perfilUser1() {
+  const router = useRouter();
+  const user = auth.currentUser;
+
 export default function telaUser1() {
   const router = useRouter();
 

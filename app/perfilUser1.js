@@ -10,9 +10,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function perfilUser1() {
-  const router = useRouter();
-
   return (
     <SafeAreaView style={styles.container}>
     
