@@ -6,14 +6,13 @@ import sloganServiçoEG from '../assets/sloganServiçoEG.png';
 
 import { auth } from '../firebase.config'
 
-export default function perfilUser1() {
-  const router = useRouter();
-  const user = auth.currentUser;
-
 export default function telaUser1() {
+  const user = auth.currentUser;
   const router = useRouter();
 
   return (
+
+    
     <SafeAreaView style={styles.container}>
     <View style={styles.topo} >
 
@@ -36,14 +35,15 @@ export default function telaUser1() {
 
         <View style={styles.descricao}>
 
-       <Text style={styles.Info2}>CPF:</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
-
+      <Text style={styles.Info3}>{user.email}</Text>
+      <Text style={styles.Info3}>{user.uid}</Text>
+      
       </View>
         
       </View>
+        <View style={{borderColor: "red", borderWidth: "2px", alignItems: "center"}}>
+          
+        </View>
     </SafeAreaView>
   );
 }

@@ -7,8 +7,8 @@ import { useState } from 'react';
 
 
 export default function index() {
-  const [email,setEmail] = useState("");
-  const [senha,setSenha] = useState("");
+  const [email,setEmail] = useState("els51@aluno.ifal.edu.br");
+  const [senha,setSenha] = useState("elijamerson2007");
 
   const router = useRouter();
 
@@ -18,7 +18,10 @@ export default function index() {
       // Signed up 
       const user = userCredential.user;
       console.log("sucesso negão");
-    } catch (error) {
+      console.log(userCredential)
+      router.navigate('/telaUser1')
+    } 
+    catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode);
@@ -40,8 +43,8 @@ export default function index() {
         <TextInput placeholder="Email ou CPF" style={styles.input} onChangeText={a => setEmail(a)} />
         <TextInput placeholder="Senha"  style={styles.input} onChangeText={a => setSenha(a)}/>
 
-        <TouchableOpacity style={styles.button}onPress={() => router.push('/telaUser1')}>
-        <Button mode='contained' onPress={handleLogin}>Entrar</Button>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text>Entrar</Text>
         </TouchableOpacity> 
 
         <View style={styles.Linksdebaixo}>

@@ -9,6 +9,8 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+ 
+export default function perfilUser() { 
 
   return (
     <SafeAreaView style={styles.container}>
@@ -37,6 +39,7 @@ import {
       </View>
     </SafeAreaView>
   );
+  
 }
 
 const styles = StyleSheet.create({
