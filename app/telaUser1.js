@@ -35,9 +35,7 @@ export default function telaUser1() {
 
         <View style={styles.descricao}>
 
-      <Text style={styles.Info3}>{user.email}</Text>
-      <Text style={styles.Info3}>{user.uid}</Text>
-      
+
       </View>
         
       </View>
@@ -49,11 +47,7 @@ export default function telaUser1() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-     backgroundColor: '#10483B',
-    justifyContent: 'center',
-  },
+
 
   content: {
     alignItems: 'center',
@@ -127,7 +121,7 @@ Info2:{
     bottom:10,
    alignItems:"center",
      flexDirection:"row",
-    gap:210,
+    gap:120,
     top:10,
     padding:50,
      justifyContent: "center"
