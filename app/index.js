@@ -15,11 +15,12 @@ export default function index() {
   const handleLogin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, senha);
-      // Signed up 
+    
       const user = userCredential.user;
       console.log("sucesso negão");
       console.log(userCredential)
       router.navigate('/telaUser1')
+
     } 
     catch (error) {
       const errorCode = error.code;

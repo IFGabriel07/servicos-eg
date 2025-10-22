@@ -28,113 +28,82 @@ export default function telaUser1() {
       <View style={styles.content}>
 
 
-      <View >
-        <TextInput placeholder="Pesquisa" style={styles.input} />
-        </View>
       <Image source={sloganServiçoEG} style={styles.logo} />  
-
-        <View style={styles.descricao}>
-
-
-      </View>
-        
-      </View>
-        <View style={{borderColor: "red", borderWidth: "2px", alignItems: "center"}}>
-          
+      <View >
+        <TextInput placeholder="Pesquisar" style={styles.input} />
+        <Image
+            source={{ uri: 'https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/2233c6a5948a2262c9823f373096279d' }}
+            style={styles.iconeEG}/>
         </View>
+
+      </View>
+
+          <View style={styles.inputDoServidor}>
+
+
+
+          </View>
+
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-
-
-  content: {
+  container: {
+    flex: 1, 
     alignItems: 'center',
     gap: 20,
-    padding:8,
+    padding: 8,
+    backgroundColor: '#00291c', 
   },
 
-  logo: {
-    width: 250,
-    height: 150,
-  },
-
-  descricao: {
-   gap:"35",
-   padding:"50",
-  backgroundColor: '#10483B',
-  justifyContent: 'flex-start', 
-  alignItems: 'flex-start', 
-     
-  },
-  Info:{
-
-    backgroundColor: '#10483B',
-    color: 'white',
-    width: 258,
-    height: 46,
-
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    // do Android
-    elevation: 5,
-    borderRadius: 10,
-},
-  
-Info2:{
-
-    backgroundColor: '#10483B',
-    color: 'white',
-    width: 166,
-    height: 46,
-
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    // Do Android
-    elevation: 5,
-    borderRadius: 10,
-},
- Info3:{
-
-    backgroundColor: '#10483B',
-    color: 'white',
-    width: 258,
-    height: 46,
-
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    // Do Android
-    elevation: 5,
-    borderRadius: 10,
-},
-  topo:
-  
-  {
-    flex:1, 
-    bottom:10,
-   alignItems:"center",
-     flexDirection:"row",
-    gap:120,
-    top:10,
-    padding:50,
-     justifyContent: "center"
-    
+  topo: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between', 
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 40,
   },
 
   linkcor: {
     color: '#FFD700',
     fontWeight: 'bold',
+    fontSize: 16,
   },
-  input:{
-    backgroundColor:"#C5DBD6",
+
+  content: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  input: {
+    backgroundColor: '#C5DBD6',
+    width: 250,
+    height: 40,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    marginBottom: 20,
+  },
+
+  logo: {
+    width: 250,
+    height: 150,
+    resizeMode: 'contain',
+  },
+
+  iconeEG:{
+
+      height:50,
+      width:50,
+
+  },
 
 
-  }
+  inputDoServidor:{
+
+
+    
+  },
 });
