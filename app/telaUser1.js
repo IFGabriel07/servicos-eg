@@ -20,7 +20,7 @@ export default function telaUser1() {
             <Text style={styles.linkcor}>Sair</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity  onPress={() => router.push('/perfilUser1')}>
+        <TouchableOpacity  onPress={() => router.push('/teste1')}>
             <Ionicons name="person" size={32} color="black" />
         </TouchableOpacity>
 
