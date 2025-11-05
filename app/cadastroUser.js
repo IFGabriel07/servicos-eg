@@ -62,7 +62,7 @@ export default function cadastroUser() {
             <TextInput placeholder="Cidade" style={styles.input} />
 
             <TouchableOpacity style={styles.button} >
-              <Text style={styles.buttonText} onPress={() => router.push("/telaUser1")}>Prosseguir</Text>
+              <Text style={styles.buttonText} onPress={() => router.push("/perfilUser1")}>Prosseguir</Text>
             </TouchableOpacity>
 
 
