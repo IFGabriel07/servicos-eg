@@ -24,11 +24,11 @@ export default function perfilUser() {
 
         <View style={styles.descricao}>
 
-        <Text style={styles.Info}>Gabriel Felipe da Silva Santos</Text>
-       <Text style={styles.Info2}>CPF:</Text>
-      <Text style={styles.Info3}>{user.email}</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
+        <Text style={styles.Info}>Adonai Roberto de Oliveira Narciso</Text>
+       <Text style={styles.Info2}>CPF: ....761.093-..</Text>
+      <Text style={styles.Info3}>email: {user.email}</Text>
+      <Text style={styles.Info3}>Telefone: (82) 99890-1542</Text>
+      <Text style={styles.Info3}>Localização: Maceió - AL</Text>
 
       </View>
     
