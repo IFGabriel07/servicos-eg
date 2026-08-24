@@ -1,17 +1,12 @@
 import { useRouter } from 'expo-router';
 import {Ionicons} from '@expo/vector-icons' 
-import {
-  
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {Text,SafeAreaView,StyleSheet,View,TouchableOpacity} from 'react-native';
+import { auth } from '../firebase.config'
 
-export default function perfilUser1() {
+
+export default function perfilUser() { 
   const router = useRouter();
+  const user = auth.currentUser;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -30,16 +25,17 @@ export default function perfilUser1() {
         <View style={styles.descricao}>
 
         <Text style={styles.Info}>Adonai Roberto de Oliveira Narciso</Text>
-       <Text style={styles.Info2}>CPF:</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
-      <Text style={styles.Info3}>Adonai Roberto de Oliveira Narciso</Text>
+       <Text style={styles.Info2}>CPF: ....761.093-..</Text>
+      <Text style={styles.Info3}>email: {user.email}</Text>
+      <Text style={styles.Info3}>Telefone: (82) 99890-1542</Text>
+      <Text style={styles.Info3}>Localização: Maceió - AL</Text>
 
       </View>
-        
+    
       </View>
     </SafeAreaView>
   );
+  
 }
 
 const styles = StyleSheet.create({
@@ -105,7 +101,6 @@ Info2:{
     color: 'white',
     width: 258,
     height: 46,
-
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
